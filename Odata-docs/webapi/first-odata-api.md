@@ -21,9 +21,6 @@ This sample:
 
 * [.NET Core SDK 2.2 or later](https://www.microsoft.com/net/download/all)
 
-## Download the starter app
-
-[Download Web API starter app](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/first-odata-api/samples/2.2/StarterApp).
 
 ## Register OData
 
@@ -313,6 +310,5 @@ OData queries can be chained to make a complex query. For example, appending `?$
 
 ## Additional resources
 
-* [View or download sample code for this tutorial](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/first-odata-api/samples).
 * [Security Guidance for ASP.NET Core Web API OData](odata-security.md)
 * [OData official website](https://www.odata.org/)

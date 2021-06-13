@@ -63,6 +63,9 @@
           href: /odata/webapi/model-builder-untyped
         - name: Convention model builder
           href: /odata/webapi/convention-model-builder
+          items:
+            - name: Capabilities vocabulary extensions
+              href: /odata/webapi/model-builder-capabilities-vocabulary
         - name: Non-convention model builder
           href: /odata/webapi/model-builder-nonconvention
       - name: Routing
@@ -151,6 +154,8 @@
             href: /odata/webapi/key-value-binding
           - name: Merge complex type and entity type
             href: /odata/webapi/merge-complex-and-entity
+          - name: Query options in request body
+            href: /odata/webapi/query-options-in-request-body
       - name: Extending WebAPI
         items:
         - name: Custom URL parsing
@@ -163,6 +168,8 @@
           href: /odata/webapi/stream-entity
         - name: Customize unsupported types
           href: /odata/webapi/unsupported-type-usage
+        - name: Custom OData query options parser
+          href: /odata/webapi/custom-query-options-parser
   - name: ASP.NET Core
     items:
     - name: Getting started
@@ -273,28 +280,32 @@
         href: /odata/client/getting-started
       - name: Basic CRUD operations
         href: /odata/client/basic-crud-operations
+      - name: Get Response Content
+        href: /odata/client/get-response-content
+      - name: Query options
+        href: /odata/client/query-options
+      - name: Navigation Properties
+        href: /odata/client/navigation-properties
+      - name: Batch operations
+        href: /odata/client/batch-operations
+      - name: Pagination
+        href: /odata/client/pagination
       - name: Annotations
         href: /odata/client/annotation-support
       - name: Async operations
         href: /odata/client/async-operations
-      - name: Batch operations
-        href: /odata/client/batch-operations
       - name: Client tracking
         href: /odata/client/tracking
-      - name: Server driven paging
-        href: /odata/client/deal-with-server-driven-paging
-      - name: Get response content
-        href: /odata/client/get-response-content
       - name: Client Code Generation Tool
         href: /odata/client/code-generation-tool
-      - name: Query options
-        href: /odata/client/query-options
       - name: Client hooks
         href: /odata/client/using-hooks
       - name: Using HttpClient 
         href: /odata/client/using-httpclient
       - name: Using Extensions
         href: /odata/client/using-extensions
+      - name: Using Blazor WebAssembly With OData Client
+        href: /odata/client/using-blazor-wasm-with-odata-client
   - name: Spatial lib
     items:
         - name: Define spatial properties
@@ -307,6 +318,32 @@
     items:
       - name: Basic auth setup
         href: /odata/webapi/basic-auth
+      - name: WebApi Authorization
+        items:
+          - name: Overview
+            href: /odata/webapiauth/overview
+          - name: Getting Started
+            href: /odata/webapiauth/getting-started
+          - name: How permissions are applied
+            href: /odata/webapiauth/how-permissions-are-applied
+  - name: OData Connected Service
+    items:
+      - name: Getting Started
+        href: /odata/connectedservice/getting-started
+      - name: Generating code for VB clients
+        href: /odata/connectedservice/generating-code-for-vb-clients
+      - name: Choosing what to generate
+        href: /odata/connectedservice/choosing-what-to-generate
+      - name: Generating multiple files
+        href: /odata/connectedservice/generating-multiple-files
+      - name: Accessing endpoints that require authentication
+        href: /odata/connectedservice/accessing-endpoints-with-auth
+      - name: Updating the generated code
+        href: /odata/connectedservice/updating-generated-code
+      - name: Working with T4 Templates
+        href: /odata/connectedservice/t4-templates
+      - name: Settings reference
+        href: /odata/connectedservice/reference
   - name: Legacy APIs
     items: 
       - name: ODataLib v6
@@ -389,11 +426,17 @@
   items:
     - name: OData lib changes
       href: /odata/changelog/odatalib-7x
-    - name: WebApi lib changes
+    - name: ASP.NET Core OData (8.x) changes
+      href: /odata/changelog/aspnetcoreodata-8x
+    - name: WebApi lib (7.x) changes
       href: /odata/changelog/webapi-7x
+    - name: Edm ModelBuilder
+      href: /odata/changelog/modelbuilder
     - name: OData extensions changes
       href: /odata/changelog/extensions-1x
     - name: OData ConnectedService changes
       href: /odata/changelog/odataconnectedservice
+    - name: OData OpenAPI changes
+      href: /odata/changelog/odataopenapi
 # - name: 10.2 Work around for SingleResult.Create an empty result
 #   href: posts\work-around-for-singleresult-create

@@ -9,6 +9,221 @@ ms.topic: article
 
 # OData WebApi changelog
 
+## WebAPI 7.5.8
+
+### Breaking Changes:
+
+### New Features:
+
+* N/A
+
+### Improvements and fixes:
+
+* [ [#2426](https://github.com/OData/WebApi/pull/2426) ] Multiple orderby level.
+
+* [ [#2457](https://github.com/OData/WebApi/pull/2457) ] Filter is not working with date function
+
+* [ [#2482](https://github.com/OData/WebApi/pull/2482) ] Revert "inconsistencies in query options when_returnscollection is used on collection entity. [#2398](https://github.com/OData/WebApi/pull/2398) ]" 
+
+---
+
+## WebAPI 7.5.7
+
+### Breaking Changes:
+
+### New Features:
+
+* N/A
+
+### Improvements and fixes:
+
+* [ [#2450](https://github.com/OData/WebApi/pull/2450) ] Add the OData version to reader settings when specified in the request
+
+* [ [#2445](https://github.com/OData/WebApi/pull/2445) ] ODataResourceDeserializer Preserves Request on ODataDeserializerContext for Nested Resource
+
+* [ [#2438](https://github.com/OData/WebApi/pull/2438) ] Extend runtime Type methods of OperationConfiguration
+
+* [ [#2436](https://github.com/OData/WebApi/pull/2436) ] Excessive memory in ODataConventionModelBuilder BuildDerivedTypesMapping
+
+* [ [#2431](https://github.com/OData/WebApi/pull/2431) ] Using Metadata writer async
+
+* [ [#2418](https://github.com/OData/WebApi/pull/2418) ] Check for empty Namespace
+
+* [ [#2398](https://github.com/OData/WebApi/pull/2398) ] Inconsistencies in query options when returnscollection is used on collection of entity types
+
+---
+
+## WebAPI 7.5.6
+
+### Breaking Changes:
+
+### New Features:
+
+* [ [#2401](https://github.com/OData/WebApi/pull/2401) ] Support write resource with stream property and Support query stream property
+
+### Improvements and fixes:
+
+* Add source link for source code debugging. To debug (at least):
+  - Enable Nuget.org Symbol Server
+  - Enable Source Link support
+
+---
+
+## WebAPI 7.5.5
+
+### Breaking Changes:
+
+### New Features:
+
+### Improvements and fixes:
+
+* Fix the ODL package version dependency issue
+
+* [ [#2397](https://github.com/OData/WebApi/pull/2397) ] Moving EnableQuery request level query data storage to HttpContext
+
+---
+
+## WebAPI 7.5.4
+
+### Breaking Changes:
+* [ [#2341](https://github.com/OData/WebApi/pull/2341) ] Create ODataError in Non-Success responses
+
+If your code has custom implementations of the methods below, you may encounter a breaking change.
+``` csharp
+BadRequest(string message);
+Conflict(string message);
+Unauthorized(string message);
+NotFound(string message);
+UnprocessableEntity(string message);
+```
+
+For example, in your custom implementation of `BadRequest(string message)`, you may be inheriting from `BadRequestObjectResult`, yet in this fix, we are inheriting from `BadRequestResult`.
+
+### New Features:
+
+* [ [#2361](https://github.com/OData/WebApi/pull/2361) ] Enable JSON Metadata
+  You can use one of the following to return the JSON metadata:
+  - $format=application/json
+  - $format=json
+  - Accept=application/json
+
+* [ [#2341](https://github.com/OData/WebApi/pull/2341) ] Create ODataError in Non-Success responses
+
+* [ [#2311](https://github.com/OData/WebApi/pull/2311) ] Enable case insensitive request binding
+
+
+### Improvements and fixes:
+
+* [ [#2379](https://github.com/OData/WebApi/pull/2379) ] Fix duplicate batch Cookie header
+
+* [ [#2377](https://github.com/OData/WebApi/pull/2377) ] Fix MergeIndividualAndBatchPreferences method
+
+* [ [#2368](https://github.com/OData/WebApi/pull/2368) ] Fix bug in attribute convention route values
+
+* [ [#2362](https://github.com/OData/WebApi/pull/2362) ] Enabling query validation EnableQuery before action execution
+
+* [ [#2356](https://github.com/OData/WebApi/pull/2356) ] Fix behaviour for Preflight requests on the ODataBatchMiddleware
+
+* [ [#2332](https://github.com/OData/WebApi/pull/2332) ] Fix invalid next page link in nested collections
+
+---
+
+## WebAPI 7.5.2
+
+### New Features:
+
+### Improvements and fixes:
+
+* [ [#2342](https://github.com/OData/WebApi/pull/2342) ] Remove GuidCompare method in ExpressionBinderBase.cs
+
+  It's breaking change since 'GuidCompare' was a public API. Please use Guid.CompareTo(Guid) method directly.
+
+* [ [#2336](https://github.com/OData/WebApi/pull/2336) ] Full async reader & writer support
+
+  This change makes the call stack within ASP.NET Core OData completely asynchronous,
+  enabling ASP.NET Core applications to use OData without requiring `AsynchronousIO=true`.
+  The change also wraps the stream given to OData Library to ensure that all calls made
+  from OData Library to the stream are through asychnronous APIs.
+
+* [ [#2332](https://github.com/OData/WebApi/pull/2332) ] Fix invalid next page link in nested collections
+
+---
+
+## WebAPI 7.5.1
+
+### New Features:
+
+### Improvements and fixes:
+
+* [ [#2299](https://github.com/OData/WebApi/pull/2299) ] Create the correct expression when casting entity/complex type to derived type
+
+* [ [#2302](https://github.com/OData/WebApi/pull/2302) ] Group by on date throws exceptions
+
+* [ [#2306](https://github.com/OData/WebApi/pull/2306) ] Throw exception if the function call without providing the parameter value
+
+* [ [#2310](https://github.com/OData/WebApi/pull/2310) ] Fix buggy behaviour when addressing derived types
+
+* [ [#2313](https://github.com/OData/WebApi/pull/2313) ] Add support for parameters defined with type
+
+* [ [#2315](https://github.com/OData/WebApi/pull/2315) ] Fix routing regression causing 404 on actions with [FromQuery]
+
+* [ [#2320](https://github.com/OData/WebApi/pull/2320) ] Select a complex with null value fails
+
+* [ [#2323](https://github.com/OData/WebApi/pull/2323) ] Fix regression affecting usage of "in" expression with primitive collection property on RHS
+
+---
+
+## WebAPI 7.5.0
+
+The NuGet packages for ASP.NET Web API OData v7.5.0 are available on the [NuGet gallery](https://www.nuget.org/).
+
+The corresponding symbols now can load from the nuget symbol server.
+
+### New Features:
+
+* [ [#2252](https://github.com/OData/WebApi/pull/2252) ] Add HEAD Support for Attribute Routing
+
+* [ [#2219](https://github.com/OData/WebApi/pull/2219) ] Support intance annotation
+
+* [ [#2195](https://github.com/OData/WebApi/pull/2195) ] Add cast operation to FilterBinder.BindIn
+
+* [ [#2191](https://github.com/OData/WebApi/pull/2191) ] support long URL pattern
+
+* [ [#2189](https://github.com/OData/WebApi/pull/2189) ] Enable convention routing for operation import
+
+* [ [#2167](https://github.com/OData/WebApi/pull/2167) ] support fine grained cors access control
+
+
+### Improvements and fixes:
+
+* [ [#2232](https://github.com/OData/WebApi/pull/2232) ] AspNetCore Resolving of Batch ContentId for AddRelatedObject
+
+* [ [#2231](https://github.com/OData/WebApi/pull/2231) ] Enhance $batch accept header decision
+
+* [ [#2288](https://github.com/OData/WebApi/pull/2288) ] ResourceContext.ResourceInstance throws exception if there's a select or expand
+
+* [ [#2287](https://github.com/OData/WebApi/pull/2287) ] Invalid partial JSON response happens expanding an entity
+
+* [ [#2279](https://github.com/OData/WebApi/pull/2279) ] Fix incorrect child collection nextlink
+
+* [ [#2267](https://github.com/OData/WebApi/pull/2267) ] enable enum member alias for query options
+
+* [ [#2248](https://github.com/OData/WebApi/pull/2248) ] Fix invalid location header generated when key property for a model contains unicode chars
+
+* [ [#2246](https://github.com/OData/WebApi/pull/2246) ] Fix Delta<TStructuralType>.GetInstance() method
+
+* [ [#2200](https://github.com/OData/WebApi/pull/2200) ] Avoid NullReferenceException on TruncatedCollection<T>
+
+* [ [#2197](https://github.com/OData/WebApi/pull/2197) ] Fix skip token encoding
+
+* [ [#2168](https://github.com/OData/WebApi/pull/2168) ] Improve action selector routing
+
+* [ [#2142](https://github.com/OData/WebApi/pull/2142) ] Remove the null check for classic EF
+
+* [ [#2060](https://github.com/OData/WebApi/pull/2060) ] opertation returns path for the return entity set or singleton
+
+---
+
 ## WebAPI 7.4.1
 
 ### Improvements and fixes:
@@ -71,7 +286,7 @@ Aggregation support was introduced in EF Core 2.0, however it was implemented as
 
 * [ [#1962](https://github.com/OData/WebApi/pull/1962) ] Fix cast issue
 
-* [ [#1953](https://github.com/OData/WebApi/pull/1953) ] Fix Skiptoke value with DateTime
+* [ [#1953](https://github.com/OData/WebApi/pull/1953) ] Fix Skiptoken value with DateTime
 
 * [ [#1948](https://github.com/OData/WebApi/pull/1948) ] Use ODataValueProvider
 
